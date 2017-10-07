@@ -12,6 +12,8 @@ namespace AlienInvasion
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        MainGame mainGame;
+
         public Alien()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -21,6 +23,8 @@ namespace AlienInvasion
             graphics.PreferredBackBufferWidth = 480;
             graphics.PreferredBackBufferHeight = 800;
             graphics.SupportedOrientations = DisplayOrientation.Portrait | DisplayOrientation.PortraitDown;
+
+            mainGame = new MainGame();
         }
 
         /// <summary>
@@ -32,6 +36,8 @@ namespace AlienInvasion
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            mainGame.Initialize(this);
 
             base.Initialize();
         }
@@ -46,6 +52,8 @@ namespace AlienInvasion
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            mainGame.Load(this.Content);
+
         }
 
         /// <summary>
@@ -55,6 +63,8 @@ namespace AlienInvasion
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+
+            mainGame.UnLoad();
         }
 
         /// <summary>
@@ -69,6 +79,8 @@ namespace AlienInvasion
 
             // TODO: Add your update logic here
 
+            mainGame.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -81,7 +93,9 @@ namespace AlienInvasion
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            mainGame.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
