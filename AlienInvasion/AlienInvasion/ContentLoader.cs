@@ -15,7 +15,6 @@ using System.IO;
 
 namespace AlienInvasion
 {
-
     public class ContentLoader
     {
         private static Dictionary<string, Texture2D> Sprites { get; set; }

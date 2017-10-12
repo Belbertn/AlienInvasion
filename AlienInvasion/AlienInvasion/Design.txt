@@ -1,0 +1,9 @@
+﻿CONCEPT
+	* 2D Top Down strategy game.
+	* Defend against Invasion from Aliens.
+	* Control units by tapping them with your finger and selecting a destination/target.
+	* Place defences and encampments.
+
+Code Plan
+	* MainGame controls everything.
+	* Maingame loads the states: MainScreen, InGame, Paused.

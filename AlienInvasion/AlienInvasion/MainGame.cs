@@ -9,17 +9,17 @@ namespace AlienInvasion
 {
     class MainGame
     {
-        public Alien alien { get; private set; }
-        public ContentManager contentManager { get; private set; }
+        public Alien Alien { get; private set; }
+        public ContentManager ContentManager { get; private set; }
 
         public void Initialize(Alien alien)
         {
-            this.alien = alien;
+            Alien = alien;
         }
 
         public void Load(ContentManager contentManager)
         {
-            this.contentManager = contentManager;
+            ContentManager = contentManager;
         }
 
         public void UnLoad()
