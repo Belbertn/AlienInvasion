@@ -17,7 +17,7 @@ namespace AlienInvasion
     interface IEntity
     {
         Vector2 Position { get; set; }
-        void Initialize(Alien a, SpriteBatch spriteBatch);
+        void Initialize(MainGame mainGame, SpriteBatch spriteBatch);
         void Load();
         void Update(GameTime gameTime);
         void Draw();

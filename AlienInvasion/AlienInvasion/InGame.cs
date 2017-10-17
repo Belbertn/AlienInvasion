@@ -17,14 +17,14 @@ namespace AlienInvasion
 {
     class InGame : IGameState
     {
-        private Alien a;
+        private MainGame mainGame;
         private SpriteBatch spriteBatch;
 
         public List<IEntity> Entities { get; set; }
 
-        public void Initialize(Alien a, SpriteBatch spriteBatch)
+        public void Initialize(MainGame mainGame, SpriteBatch spriteBatch)
         {
-            this.a = a;
+            this.mainGame = mainGame;
             this.spriteBatch = spriteBatch;
 
             Entities = new List<IEntity>();
