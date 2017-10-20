@@ -30,6 +30,11 @@ namespace AlienInvasion
             Entities = new List<IEntity>();
         }
 
+        public void UnLoad()
+        {
+
+        }
+
         public void Load()
         {
 

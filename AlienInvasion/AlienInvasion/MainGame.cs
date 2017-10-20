@@ -12,9 +12,18 @@ namespace AlienInvasion
         public Alien Alien { get; private set; }
         public ContentManager ContentManager { get; private set; }
 
-        public void Initialize(Alien alien)
+        private IGameState gameState;
+
+        public SpriteBatch SpriteBatch { get; private set; }
+
+        public void Initialize(Alien alien, SpriteBatch spriteBatch)
         {
             Alien = alien;
+
+            SpriteBatch = spriteBatch;
+
+            gameState = new InGame();
+            gameState.Initialize(this, SpriteBatch);
         }
 
         public void Load(ContentManager contentManager)
@@ -32,7 +41,7 @@ namespace AlienInvasion
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw()
         {
 
         }
